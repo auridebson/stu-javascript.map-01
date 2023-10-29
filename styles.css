@@ -1,0 +1,27 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #808080;
+    font-family: Verdana;
+}
+
+.container-cabecalho {
+    background-color: #264d2098;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.container-lista {
+    background-color: #fa64d27e;
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+}
+
+.tabela-produtos {
+    background-color: rgba(71, 68, 68, 0.417);
+}
