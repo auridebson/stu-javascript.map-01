@@ -55,6 +55,6 @@ let novoArray = calculaPrecoDesconto3(produtos)
 
 console.log(calculaPrecoDesconto3(novoArray))
 for (i in novoArray) {
-    containerLista.innerHTML += novoArray[i].nome +" - "+ novoArray[i].preco_descontado +"<br>"
+    containerLista.innerHTML += novoArray[i].nome +" - R$ "+ novoArray[i].preco_descontado +"<br>"
 }
 
