@@ -10,37 +10,9 @@ const produtos = [
     {nome:'Cerveja 330ml Heineken', preco:7, desconto:0.18}
 ]
 
-function calculaPrecoDesconto(produtos) {
-    const produtosComDesconto = produtos.map(produto => {
-        const vlrComDesconto = produto.preco*(1-produto.desconto)
-        const vlrDesconto = produto.preco - (produto.preco*(1-produto.desconto))
-        return {
-            nome: produto.nome,
-            preco: produto.preco,
-            desconto: produto.desconto,
-            vlrDesconto: vlrDesconto,
-            vlrComDesconto: vlrComDesconto
-        }
-    })
-    return produtosComDesconto
-} //fim da função de adição de novo dado no array
-
-function calculaPrecoDesconto2(itens) {
-    const novosProdutos = itens.map((item) => {
-        const preco_descontado = item.preco-(item.preco*item.desconto)
-        return {
-            nome:item.nome,
-            preco:item.preco,
-            desconto:item.desconto,
-            preco_descontado:preco_descontado
-        }
-    })
-    return novosProdutos
-}
-
-function calculaPrecoDesconto3(itens) {
+function calculaPrecoDesconto(itens) {
     const novosProdutos = itens.map(item => {
-        const preco_descontado = parseInt(item.preco-(item.preco*item.desconto))
+        const preco_descontado = parseFloat(item.preco-(item.preco*item.desconto))
         return {
             nome: item.nome,
             preco: item.preco,
@@ -50,11 +22,12 @@ function calculaPrecoDesconto3(itens) {
     return novosProdutos
 }
 
+let produtosDesc = calculaPrecoDesconto(produtos)
 
-let novoArray = calculaPrecoDesconto3(produtos)
+console.log(calculaPrecoDesconto(produtosDesc))
 
-console.log(calculaPrecoDesconto3(novoArray))
-for (i in novoArray) {
-    containerLista.innerHTML += novoArray[i].nome +" - R$ "+ novoArray[i].preco_descontado +"<br>"
+for (i in produtosDesc) {
+    containerLista.innerHTML += produtosDesc[i].nome +" - R$ "+ produtosDesc[i].preco_descontado +"<br>"
 }
+
 
