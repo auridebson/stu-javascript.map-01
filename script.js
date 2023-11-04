@@ -131,11 +131,12 @@ function convNum() {
 function notasAlunos() {
     const dadosAluno = alunos.map((aluno,nt1,nt2,nt3) => {
         let mediaNota = `Média final : ${((aluno.nota1+aluno.nota2+aluno.nota3)/3).toFixed(2)}`
-        containerLista.innerHTML += `<p>${aluno.nome}</p>`
+        containerLista.innerHTML += `<p>${aluno.nome.toUpperCase()}</p>`
         containerLista.innerHTML += `<li>${aluno.nota1}</li>`
         containerLista.innerHTML += `<li>${aluno.nota2}</li>`
         containerLista.innerHTML += `<li>${aluno.nota3}</li>`
-        containerLista.innerHTML += `<bold>${mediaNota}</bold>`
+        containerLista.innerHTML += `<strong>${mediaNota}</strong>`
+        containerLista.innerHTML += "<hr>"
         
 
 
