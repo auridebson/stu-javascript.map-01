@@ -23,13 +23,13 @@ function calculaPrecoDesconto(itens) {
     return novosProdutos
 }
 
-let produtosDesc = calculaPrecoDesconto(produtos)
+// let produtosDesc = calculaPrecoDesconto(produtos)
 
 // console.log(calculaPrecoDesconto(produtosDesc))
 
-for (i in produtosDesc) {
-    containerLista.innerHTML += produtosDesc[i].nome +" - R$ "+ produtosDesc[i].preco_descontado +"<br>"
-}
+// for (i in produtosDesc) {
+//     containerLista.innerHTML += produtosDesc[i].nome +" - R$ "+ produtosDesc[i].preco_descontado +"<br>"
+// }
 
 
 // Dado um array de números, use map() para criar um novo array que contenha o 
@@ -52,13 +52,25 @@ const lenPalavra = palavras.map((palavra) => {
 
 // Dado um array de objetos que contenham informações de produtos, use 
 // map() para criar um novo array que contenha apenas os nomes dos produtos.
-const newProducts = produtos.map( (produto) => {
-    let nome = produto.nome
-    alert(nome)
+function newProducts() {
+    containerLista.innerHTML = ""
+    produtos.map( (produto) => {
+    let nome = `<p>${produto.nome}</p>`
+    containerLista.innerHTML += nome
     return nome
 })
+}
 
+// Dado um array de números, use map() para criar um novo array que 
+// contenha a raiz quadrada de cada número no array original.
 
+function raizNumero() {
+    containerLista.innerHTML = ""
+    listNumeros.map((num) => {
+    let newNumber = `<p>${num**2}</p>`
+    containerLista.innerHTML += newNumber 
+    return newNumber
+})
+} 
 
-
-btnAciona.addEventListener("click", newProducts)
+btnAciona.addEventListener("click", raizNumero)
