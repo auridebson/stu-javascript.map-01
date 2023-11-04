@@ -91,9 +91,12 @@ function convCase() {
 function convData() {
     containerLista.innerHTML = ""
     const novasDatas = datas.map((data) => {
-        let novaData = Date.parse(data)
+        let novaData = new Date(data)
+        let dia = novaData.getDay()
+        let mes = novaData.getMonth()+1
+        let ano = novaData.getFullYear()
 
-        containerLista.innerHTML += `<p>${new Date(novaData)}</p>`
+        containerLista.innerHTML += `<p>${dia}/${mes}/${ano}</p>`
         return novaData
     })
 }
