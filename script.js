@@ -1,4 +1,5 @@
 const containerLista = document.querySelector(".container-lista")
+const btnAciona = document.querySelector(".btnAciona")
 
 const produtos = [
     {nome:'Sabão em pó', preco:15, desconto:0.2},
@@ -24,10 +25,40 @@ function calculaPrecoDesconto(itens) {
 
 let produtosDesc = calculaPrecoDesconto(produtos)
 
-console.log(calculaPrecoDesconto(produtosDesc))
+// console.log(calculaPrecoDesconto(produtosDesc))
 
 for (i in produtosDesc) {
     containerLista.innerHTML += produtosDesc[i].nome +" - R$ "+ produtosDesc[i].preco_descontado +"<br>"
 }
 
 
+// Dado um array de números, use map() para criar um novo array que contenha o 
+// dobro de cada número no array original.
+
+const listNumeros = [1,3,5,7,9,11,13,15,17,19]
+const novoArr = listNumeros.map((elemento) => {
+    let novoElemento = elemento*2
+    return novoElemento
+})
+
+
+// Dado um array de palavras, use map() para criar um novo array 
+// que contenha o comprimento de cada palavra no array original.
+const palavras = ["Felicidade","Alegria","Positividade","Prosperidade","Paz","Saúde","Sorriso","Amor"]
+const lenPalavra = palavras.map((palavra) => {
+    let lenWord = palavra.length
+    return lenWord
+})
+
+// Dado um array de objetos que contenham informações de produtos, use 
+// map() para criar um novo array que contenha apenas os nomes dos produtos.
+const newProducts = produtos.map( (produto) => {
+    let nome = produto.nome
+    alert(nome)
+    return nome
+})
+
+
+
+
+btnAciona.addEventListener("click", newProducts)
