@@ -11,6 +11,8 @@ const produtos = [
     {nome:'Cerveja 330ml Heineken', preco:7, desconto:0.18}
 ]
 
+const datas = ["07/10/1977","10/25/1999","05/19/2002","12/03/1980"]
+
 function calculaPrecoDesconto(itens) {
     const novosProdutos = itens.map(item => {
         const preco_descontado = parseFloat(item.preco-(item.preco*item.desconto))
@@ -73,4 +75,29 @@ function raizNumero() {
 })
 } 
 
-btnAciona.addEventListener("click", raizNumero)
+// Dado um array de nomes, use map() para criar um novo array que contenha os nomes em maiúsculas.
+function convCase() {
+    const newWords = palavras.map((palavra) => {
+        palavra = palavra.toUpperCase()
+        containerLista.innerHTML += `<p>${palavra}</p>`
+        return palavra
+    })
+}
+
+
+// Dado um array de datas no formato string, use map() para criar 
+// um novo array que contenha objetos Date correspondentes a cada data.
+
+function convData() {
+    containerLista.innerHTML = ""
+    const novasDatas = datas.map((data) => {
+        let novaData = Date.parse(data)
+
+        containerLista.innerHTML += `<p>${new Date(novaData)}</p>`
+        return novaData
+    })
+}
+
+
+
+btnAciona.addEventListener("click", convData)
