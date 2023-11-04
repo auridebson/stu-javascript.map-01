@@ -13,6 +13,8 @@ const produtos = [
 
 const datas = ["07/10/1977","10/25/1999","05/19/2002","12/03/1980"]
 
+const numTexto = ["3.55","8.2","5.9","7.5","5.0","8.8","9.99","1.99","1.0"]
+
 function calculaPrecoDesconto(itens) {
     const novosProdutos = itens.map(item => {
         const preco_descontado = parseFloat(item.preco-(item.preco*item.desconto))
@@ -37,11 +39,13 @@ function calculaPrecoDesconto(itens) {
 // Dado um array de números, use map() para criar um novo array que contenha o 
 // dobro de cada número no array original.
 
-const listNumeros = [1,3,5,7,9,11,13,15,17,19]
-const novoArr = listNumeros.map((elemento) => {
+
+function novoArr() {
+    listNumeros.map((elemento) => {
     let novoElemento = elemento*2
     return novoElemento
 })
+}
 
 
 // Dado um array de palavras, use map() para criar um novo array 
@@ -101,6 +105,20 @@ function convData() {
     })
 }
 
+// Dado um array de strings que representam números, use map() para criar um 
+// novo array que contenha os números reais correspondentes.
+
+function convNum() {
+    containerLista.innerHTML = ""
+    numTexto.map((numero) => {
+        let novoNum = parseFloat(numero)
+        containerLista.innerHTML += `<p>${numero}</p>`
+        return novoNum
+    })
+}
 
 
-btnAciona.addEventListener("click", convData)
+
+
+
+btnAciona.addEventListener("click", convNum)
