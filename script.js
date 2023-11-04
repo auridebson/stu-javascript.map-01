@@ -2,10 +2,10 @@ const containerLista = document.querySelector(".container-lista")
 const btnAciona = document.querySelector(".btnAciona")
 
 const alunos = [
-    {nome:"auridebson", nota1: "8.5", nota2: "9.2", nota3: "7.6"},
-    {nome:"luciana", nota1: "9.2", nota2: "8.5",nota3: "9.5"},
-    {nome:"levy", nota1: "9.2", nota2: "9.5", nota3: "9.5"},
-    {nome:"gulilherme", nota1: "8.5", nota2: "7.6", nota3: "9.2"},
+    {nome:"auridebson", nota1: 8.5, nota2: 9.2, nota3: 7.6},
+    {nome:"luciana", nota1: 9.2, nota2: 8.5,nota3: 9.5},
+    {nome:"levy", nota1: 9.2, nota2: 9.5, nota3: 9.5},
+    {nome:"gulilherme", nota1: 8.5, nota2: 7.6, nota3: 9.2},
 ]
 
 const produtos = [
@@ -130,10 +130,14 @@ function convNum() {
 
 function notasAlunos() {
     const dadosAluno = alunos.map((aluno,nt1,nt2,nt3) => {
+        let mediaNota = `Média final : ${((aluno.nota1+aluno.nota2+aluno.nota3)/3).toFixed(2)}`
         containerLista.innerHTML += `<p>${aluno.nome}</p>`
         containerLista.innerHTML += `<li>${aluno.nota1}</li>`
         containerLista.innerHTML += `<li>${aluno.nota2}</li>`
         containerLista.innerHTML += `<li>${aluno.nota3}</li>`
+        containerLista.innerHTML += `<bold>${mediaNota}</bold>`
+        
+
 
 
     })
